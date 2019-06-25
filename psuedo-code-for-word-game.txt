@@ -1,0 +1,36 @@
+#Start screen has large logo on top jumbotron with seinfeld logo and Hangman next to it in same font
+    -below logo a row with that prompts player to press any key to start playing
+
+    -then 2 columns:
+        -left column has picture of seinfeld character with nothing removed
+        -right column is composed of 3 rows
+            ~row one is a box that displays h1 "current word/Phrase" unsolved
+            and underneath the empty unsolved word/phrase           
+            i.e. "__ __ - __ __ __ __ - __ __ __ - __ __ __!"
+
+            ~row two is box that states Missed Letters: at beginning it is empty
+            as user guesses words letter chosen will apper underneath.
+            
+            ~row three is a box that will track:
+                -guesses remaining
+                -rounds won
+                -rounds lost
+
+
+#choose random number from themed word array
+    themeWordArray = array of words (every element is a word related to theme)
+    hiddenWord = chosen random word from array
+#display initial progress of word
+    '_ '  * hiddenWord.length
+#show remaining guesses
+    remainingGuess = 8
+#Prompt user for guess
+    put 'guess a letter'
+#player chooses character
+    #if guess.length == 1 (its a character)
+        #if correct add letter to hidden_word
+        #if false subtract from count (count--)
+        #display error for repeat guesses
+
+#if chances == 0
+    #puts "Sorry, you lose! Try Again!"
