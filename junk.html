@@ -1,4 +1,46 @@
- // Create an array of possible words
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+   
+    <title>Seinfeld Word Guess Game</title>
+</head>
+
+<body>
+
+    <div>
+
+        <P
+
+        <p id="directions-text">Press any key to start playing!</p>
+        <p id="solution"></p>
+        <p id="invalidGuesses"></p>
+        <p id="remainingGuesses"></p>
+        <p id="roundsWon"></p>
+        <p id="roundsLost"></p>
+
+        <p id="keyboard"></p>
+        <p id="hangmanImage"></p>
+
+        <p id="answer"></p>
+        <p id="wordToGuess"></p>
+        <p id="userchoice-text"></p>
+        <p id="alphabet"></p>
+
+        <p id=""></p>
+
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
+        <p id="ties-text"></p>
+    </div>
+
+    <script type="text/javascript">
+        // Create an array of possible words
 
         // Listen for a key to be pressed to start the game
 
@@ -15,13 +57,12 @@
         // increment win/loss counter if applicable
         // restart game with new puzzle
         // 
-        
-        
+
+
+
         // Creates an array that lists out all of the options for unsolved word 
-        var wordBank = ["Kramer", "Gypsy", "Elaine", "Kramerica", "Bosco", "George", "Newmania", "sponge", "Puddy"];
+        var wordBank = ["kramer", "Gypsy", "Elaine", "Kramerica", "Bosco", "George", "Newmania", "sponge", "Puddy"];
         
-
-
         // Creates an array that lists out all of the letter options for user to select
         var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
             "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -32,50 +73,31 @@
         // Selects random word from wordBank
         var wordToGuess = wordBank[Math.floor(Math.random() * wordBank.length)];
 
-
         //Create an array with valid letters the user can guess by making all letters lower case then Spliting the wordToGuess into an array 
         var validGuess = wordToGuess.toLowerCase().split("");
 
-
-        console.log(validGuess);
-
-        var blankWordDisplayed = "";
-
-    
-
-         function wordToBlanks() {
+        var blankWordDisplayed = function() {
             var result = [];
 
-            console.log(result);
-
-            for(var i = 0; i < validGuess.length; i++) {
-                result.push('_');
+            for (var i = 0; i < wordToGuess.length; i++) {
+                result = result.push("_");
             }
-            console.log(result);
-            blankWordDisplayed = result.join(" ");
-            return blankWordDisplayed;
-
+            return result.toString;
         }
-
-        wordToBlanks();
-
 
         var remainingLetters = validGuess.length;
         var remainingGuesses = 9;
 
          // DOM elements
-        var wordToDisplay = document.getElementById("wordToDisplay");
-        var wordToGuess = document.getElementById("wordToGuess");
-
+        var solutionDisplay = document.getElementById("solution");
         var invalidGuessesBank = document.getElementById("invalidGuesses");
         var remainingGuessesDisplay = document.getElementById("remainingGuesses");
+        var winsDisplay = document.getElementById("roundsWon");
+        var lossesDisplay = document.getElementById("roundsLost");
+        var answer = document.getElementById("answer");
 
-        // var winsDisplay = document.getElementById("roundsWon");
-        // var lossesDisplay = document.getElementById("roundsLost");
-        // var answer = document.getElementById("answer");
-
-        // var keyboard = document.getElementById("keyboard");
-        // var hangmanImage = document.getElementById("hangmanImage");
+        var keyboard = document.getElementById("keyboard");
+        var hangmanImage = document.getElementById("hangmanImage");
 
         document.onkeyup = function (event) {
             var userGuess = event.key;
@@ -110,8 +132,19 @@
        
 
         // Display the user and computer guesses, and wins/losses/ties.
-        wordToGuess.textContent = "word to guess" + wordToGuess;
-        wordToDisplay.textContent = "word to diplay with blank spaces:  " + blankWordDisplayed;
+        solutionDisplay.textContent = "word to guess" + wordToGuess;
         invalidGuessesBank.textContent = "wrong guess bank" + wrongGuess;
         remainingGuessesDisplay.textContent = remainingGuesses + "wrong guess" + wrongGuess;
         
+
+
+        // Creating variables to hold the number of wins and losses. They start at 0.
+        var wins = 0;
+        var loss = 0;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
