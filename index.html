@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<title>Seinfeld Word Guess Game</title>
+</head>
+<body>
+
+<script type="text/javascript">
+// Create a list of possible puzzles
+    
+// Listen for a key to be pressed to start the game
+    
+// Randomize the list of puzzles
+// Select the first puzzle to be solved.
+// Listen for keyboard input
+// if the user gueses a letter correctly, display that letter wherever it exists in the puzzle
+// if the user guesses incorrectly
+// add that letter to the "already guessed"
+// decrement number remaining guesses
+// display a new part of the hangman pic
+        
+// if the user wins or loses the game
+// increment win/loss counter if applicable
+// restart game with new puzzle
+// 
+
+
+
+// Creates an array that lists out all of the options for unsolved word 
+var wordBank = ["kramer", "Gypsy", "No soup for you", "Elaine Benes", "Kramerica Industries", "Serenity Now", "Frogger", "Bubble Boy", "sponge worthy", "David Puddy"];
+
+// Creates an array that lists out all of the letter options for user to select
+var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+// Selects random word from wordBank
+var wordToGuess = workBank[Math.floor(Math.random() * wordBank.length)];
+
+//Create an array with valid letters the user can guess by making all letters lower case then Spliting the wordToGuess into an array 
+var validGuess = wordToGuess.toLowerCase.split("");
+
+var wordDisplayed = [];
+    
+for (var i = 0; i < word.length; i++) {
+     wordDisplayed = "_";
+}
+
+var remainingLetters = word.length;
+
+var userGuess = 
+
+// Creating variables to hold the number of wins and losses. They start at 0.
+var wins = 0;
+var loss= 0;
+
+
+// Creates an array that lists out all of the options (Rock, Paper, or Scissors).
+var computerChoices = ['r', 'p', 's'];
+
+// Creating variables to hold the number of wins, losses, and ties. They start at 0.
+var wins = 0;
+var losses = 0;
+var ties = 0;
+
+
+
+
+
+
+
+
+
+
+
+/////////// RPS GAME DONE IN CLASS TO USE AS A REFERENCE /////////////
+
+// Create variables that hold references to the places in the HTML where we want to display things.
+var directionsText = document.getElementById('directions-text');
+var userChoiceText = document.getElementById('userchoice-text');
+var computerChoiceText = document.getElementById('computerchoice-text');
+var winsText = document.getElementById('wins-text');
+var lossesText = document.getElementById('losses-text');
+var tiesText = document.getElementById('ties-text');
+
+// This function is run whenever the user presses a key.
+document.onkeyup = function(event) {
+  // Determines which key was pressed.
+  var userGuess = event.key;
+
+  // if (userGuess !== 'r' || userGuess !== 's' || userGuess !== 'p') {
+  //   return false;
+  // }
+  // Randomly chooses a choice from the options array. This is the Computer's guess.
+  var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+  // Reworked our code from last step to use "else if" instead of lots of if statements.
+
+  // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
+  if (userGuess === 'r' || userGuess === 'p' || userGuess === 's') {
+    if (
+      (userGuess === 'r' && computerGuess === 's') ||
+      (userGuess === 's' && computerGuess === 'p') ||
+      (userGuess === 'p' && computerGuess === 'r')
+    ) {
+      wins++;
+    } else if (userGuess === computerGuess) {
+      ties++;
+    } else {
+      losses++;
+    }
+
+    // Hide the directions
+    directionsText.textContent = '';
+
+    // Display the user and computer guesses, and wins/losses/ties.
+    userChoiceText.textContent = 'You chose: ' + userGuess;
+    computerChoiceText.textContent = 'The computer chose: ' + computerGuess;
+    winsText.textContent = 'wins: ' + wins;
+    lossesText.textContent = 'losses: ' + losses;
+    tiesText.textContent = 'ties: ' + ties;
+  }
+};
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

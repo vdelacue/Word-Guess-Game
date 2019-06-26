@@ -34,3 +34,21 @@
 
 #if chances == 0
     #puts "Sorry, you lose! Try Again!"
+
+
+variables you need:
+array with all letter
+array with letters used
+array with letters of unsolved word including spaces
+array with possible words/phrases to solve
+count down with guesses used
+wins count
+loss count
+
+-press any key to start
+-then a work is selected from the word bank
+-then when user selects a letter it is removed from letters remaining and put into
+letters used. if letter was used already nothing happens
+-when letter chosen is not in array of unsolved letter guess count goes wrong and picture
+of hanged square is flipped
+-if letter is part of unsolved word the letter is revealed 
