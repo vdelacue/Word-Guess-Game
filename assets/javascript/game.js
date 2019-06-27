@@ -21,7 +21,6 @@
         var wordBank = ["Kramer", "Gypsy", "Elaine", "Kramerica", "Bosco", "George", "Newmania", "sponge", "Puddy"];
         
 
-
         // Creates an array that lists out all of the letter options for user to select
         var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
             "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -92,6 +91,7 @@
                             if (wordToGuess.charAt(i) === userGuess) {
                                 blankWordDisplayed[i] = userGuess;
                                 remainingLetters--;
+                                remainingGuesses--;
                             } else {
                                 console.log(blankWordDisplayed);
                             }
@@ -99,7 +99,7 @@
                         }
                     } else {
                         wrongGuess = wrongGuess.push(userGuess);
-                        remainingGuesses--;
+                        
 
                     }
 
@@ -113,6 +113,6 @@
         // Display the user and computer guesses, and wins/losses/ties.
         wordToGuess.textContent = "word to guess" + wordToGuess;
         wordToDisplay.textContent = blankWordDisplayed;
-        invalidGuessesBank.textContent = "wrong guess bank" + wrongGuess;
-        remainingGuessesDisplay.textContent = remainingGuesses + "wrong guess" + wrongGuess;
+        invalidGuessesBank.textContent = "Wrong Letters Guessed: " + wrongGuess;
+        remainingGuessesDisplay.textContent = "Remaining Guesses:   " + remainingGuesses;
         
