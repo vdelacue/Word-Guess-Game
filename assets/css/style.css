@@ -1,0 +1,269 @@
+
+/* Seinfeld colors I can Use, you have to pay for font so trying to find one that closely resembles 'Fenice ITC' */
+
+/*  colors
+    blue: #204d9e
+    yellow: #fddd5b
+    teal: #1eb2c9
+    red #e62a39;
+*/
+
+
+body {
+    background-color: #eee;
+    padding-top: 20px;
+    font-family: Courier New, Courier, monospace;
+    color: white;
+    text-shadow: 0 0 2px black, -1px -1px 2px black, 1px 0 2px black, 1px 1px 2px black;
+    background: url('../images/bgimage.jpg') no-repeat;
+    background-size: cover;
+}
+.container { 
+    text-align: center;
+    
+}
+h1,h2,h3,
+h4,h5,h6 {
+    padding: 5px;
+    background-color: rgba(12,51,114,.6);
+}
+#title-image, #gameover-image, #youwin-image{ 
+    display: block;
+    margin: 0 auto;
+}
+
+#currentWord {
+    letter-spacing: 10px;
+}
+
+#pressKeyTryAgain, 
+#gameover-image, 
+#youwin-image { display: none;}
+.gameplay-column {
+    padding-top: 20px;
+    border: 3px dashed #fff;
+    text-align: center;
+    margin-top: 20px;
+    min-height: 500px;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #fddd5b;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+body, .jumbotron {
+    background: #204d9e;
+}
+
+.jumbotron {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.jumbotron img {
+    width: 100%;
+    height: auto;
+}
+
+.panel {
+    background: #1eb2c9;
+}
+
+.no-background {
+    background-color: inherit;
+}
+
+.panel-heading {
+    font-weight: bold;
+    background: #fddd5b;
+    color: #e62a39;
+    font-size: calc(1vw + 1vh);
+}
+
+.panel-body {
+    min-height: 67px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+}
+
+.minimal {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.horizontalList {
+    padding-left: 0px;
+}
+
+.horizontalList li {
+    display: inline-block;
+    padding: 5px 5px 2px 5px;
+}
+
+#solution {
+    padding-bottom: 10px;
+}
+
+#solution li {
+    margin-top: 0px;
+    font-size: 2.5vw;
+    border-bottom: 1px solid #fddd5b;
+    margin-right: 5px;
+}
+
+#solution li[data-solved='true'] {
+    border-bottom: none;
+    color: #204d9e;
+}
+
+#solution li[data-failed='true'] {
+    color: #e62a39;
+    border-bottom: none;
+}
+
+#invalidGuesses li {
+    font-size: 1.5vw;
+}
+
+#invalidGuesses li::after {
+    content: ",";
+}
+
+#invalidGuesses li:last-of-type::after {
+    content: "";
+}
+
+.btn-group>.btn {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+li[data-value="-"] span.break {
+    display: none;
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (max-width: 768px) {
+    .jumbotron {
+        padding-top: 5px;
+    }
+    .jumbotron img {
+        width: auto;
+        height: 40px;
+        float: left;
+    }
+    .jumbotron h2 {
+        font-size: 3vw;
+        float: right;
+        margin-top: calc(20px - 1.5vw);
+    }
+    .container>.row:nth-of-type(2) {
+        clear: both;
+        margin-top: 10px;
+    }
+    #hangmanImage {
+        height: 400px;
+        width: auto;
+        margin: 0 auto;
+    }
+    #solution li {
+        font-size: 4.5vw;
+    }
+}
+
+#mobile-keyboard-fix {
+    position: absolute;
+    left: -200px;
+    top: 0px;
+}
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width: 544px) {
+    #hangmanImage {
+        height: 200px;
+    }
+    li[data-value="-"] {
+        display: block;
+        margin: 0px;
+        padding: 0px;
+    }
+    li[data-value="-"] span.space {
+        display: none;
+    }
+    li[data-value="-"] span.break {
+        display: block;
+    }
+    .panel-body {
+        font-size: 4vw;
+    }
+}
+
+/* Custom, iPhone Retina */
+
+@media only screen and (max-width: 320px) {
+    .btn-group>.btn {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+/* sound toggle */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #1eb2c9;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #1eb2c9;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}

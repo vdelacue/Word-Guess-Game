@@ -31,7 +31,7 @@
 
         // Selects random word from wordBank
         var wordToGuess = wordBank[Math.floor(Math.random() * wordBank.length)];
-
+        console.log(wordToGuess);
 
         //Create an array with valid letters the user can guess by making all letters lower case then Spliting the wordToGuess into an array 
         var validGuess = wordToGuess.toLowerCase().split("");
@@ -58,6 +58,7 @@
         }
 
         wordToBlanks();
+        console.log(blankWordDisplayed);
 
 
         var remainingLetters = validGuess.length;
@@ -111,7 +112,7 @@
 
         // Display the user and computer guesses, and wins/losses/ties.
         wordToGuess.textContent = "word to guess" + wordToGuess;
-        wordToDisplay.textContent = "word to diplay with blank spaces:  " + blankWordDisplayed;
+        wordToDisplay.textContent = blankWordDisplayed;
         invalidGuessesBank.textContent = "wrong guess bank" + wrongGuess;
         remainingGuessesDisplay.textContent = remainingGuesses + "wrong guess" + wrongGuess;
         
