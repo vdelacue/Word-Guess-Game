@@ -74,7 +74,8 @@
  // DOM elements
  var wordToDisplay = document.getElementById("wordToDisplay");
 
-
+ var userMessageHTML = document.getElementById("userMessage");
+ var userImgHTML = document.getElementById("userMessage");
  var invalidGuessesBank = document.getElementById("invalidGuesses");
  var remainingGuessesDisplay = document.getElementById("remainingGuesses");
 
@@ -88,8 +89,9 @@
          if (event.which >= 65 && event.which <= 90) {
              var userGuess = event.key;
 
-             if (userGuesses.includes(userGuess)) {
-                 alert("you guessed " + userGuess + " already")
+             if (wrongGuess.includes(userGuess)) {
+                userMessageHTML.textContent = "You already guessed that letter!!"
+                $("#userImg").attr("src", "../images/wrong-key.gif")
                  return false
              } else {
 
@@ -104,6 +106,11 @@
                          blankWordDisplayed[i] = userGuess
                          console.log(blankWordDisplayed)
                          wordToDisplay.textContent = blankWordDisplayed.join(" ");
+                     }
+
+                     if(userGuess !== wordToGuess[i]){
+                         wrongGuess.push(userGuess);
+                         remainingGuesses--;
                      }
                  }
 
@@ -152,6 +159,7 @@
 
 
          }
+        }
          //-----------------------------------DISPLAY CODE CHANGING DISPLAY --------------------------------------------//
 
          // var userMessage = document.getElementById("userMessage");
@@ -176,5 +184,3 @@
          //WRONG KEY DISPLAY 
 
          //GAME OVER DISPLAY
-
-         //YOU WON DISPLAY
