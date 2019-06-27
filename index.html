@@ -12,25 +12,37 @@
 </head>
 
 <body>
+    <!-- Header with seinfeld logo free download available on wikipedia no copyright infridgment -->
+    <!-- had to place header in container to center (easier than styling in css that was becoming overcomplicated) -->
     <header class="container">
-        <img id="title-image" src="assets/images/Seinfeld_logo.png" alt="Hangman Title Image" />
+        <img class="logo" id="title-image" src="assets/images/Seinfeld_logo.png" alt="Seinfeld logo" />
         <h1>Word Guess Game!</h1>
         <h2>Serenity Now!</h2>
     </header>
+    <!-- optional navbar with buttons for fans look at seinfeld fan art and seinfeld fun facts if finish project -->
     <nav>
-
     </nav>
-
+    <!-- using the boostrap grid model to style page with a row with two columns of equal size: 6 and 6 to equal 12.
+         left side will be the images for hangman and gifs that appear if user presses wrong key, loses, or wins. 
+         right side will be the instructions word to guess in "- - - - " , box with letters guessed, and box with remaining guesses.
+         right side will update as user interacts. -->
     <div class="container">
-
         <div class="row">
             <div class="col-md-6 gameplay-column">
+                <!-- these images should take up same space on the page and replace each other according to win lose playing and wrong key -->
+                <div id="changingContent">
+                    <h1 id="userMessage">Press any key to start</h1>
+                    <img id="userImg" src="assets/images/start-game.gif" alt="giddy up start game gif">
+                </div>
+                <div>
+                </div>
+                <div>
 
-                <img id="youwin-image" src="assets/images/celebrate.gif" alt="Winning Image" />
+                </div>
+                <!-- <img id="youwin-image" src="assets/images/celebrate.gif" alt="Winning Image" />
                 <h1 id="hangmanImage">Game Over/You Win</h1>
-                <img id="gameover-image" src="https://media.giphy.com/media/26gspjl5bxzhSdJtK/giphy.gif"
-                    alt="game over image" class="rounded mx-auto mb-4">
-                <h2 id="pressKeyTryAgain">Press Any Key to Try Again!</h2>
+                <img id="gameover-image" src="assets/images/game-over-sb-fall.gif" alt="game over image" class="rounded mx-auto mb-4">
+                <h2 id="pressKeyTryAgain">Press Any Key to Try Again!</h2> -->
 
             </div>
             <div class="col-md-6 gameplay-column">
@@ -47,29 +59,24 @@
             </div>
         </div>
     </div>
-    <script>
-        resetGame();
-        updateDisplay();
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
-    </script>
+    
+    
     <p></p>
     <div>
         <p id="directions-text">This game is proudly brought to you by Seinfeld fanatic Vanessa de La Cuetara</p>
     </div>
-    <!-- <div>
-        <p id="wordToGuess"></p>
-        <p id="invalidGuesses"></p>
-        <p id="remainingGuesses"></p>
-        <p id="userchoice-text"></p>
-    </div> -->
+  
 
-    <script src="assets/javascript/game.js"></script>
+   
+
 
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous">
+    </script>
+     <script src="assets/javascript/game.js"></script>
 
 </html>
