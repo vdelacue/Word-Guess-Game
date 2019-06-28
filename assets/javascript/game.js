@@ -75,7 +75,7 @@
  var wordToDisplay = document.getElementById("wordToDisplay");
 
  var userMessageHTML = document.getElementById("userMessage");
- var userImgHTML = document.getElementById("userMessage");
+ var userImgHTML = document.querySelector("#userImg");
  var invalidGuessesBank = document.getElementById("invalidGuesses");
  var remainingGuessesDisplay = document.getElementById("remainingGuesses");
 
@@ -91,7 +91,18 @@
 
              if (wrongGuess.includes(userGuess)) {
                 userMessageHTML.textContent = "You already guessed that letter!!"
-                $("#userImg").attr("src", "../images/wrong-key.gif")
+
+                
+                // {<a href="../Word-Guess-Game/images/wrong-key-2.gif"> </a>}
+                // assets/images/wrong-key-2.gif
+
+                var imgSrc = "../Word-Guess-Game/assets/images/wrong-key-2.gif";
+
+                userImgHTML.src= imgSrc;
+
+
+                console.log("../images/wrong-key-2.gif")
+                // userImgHTML.innerHTML =("<img src=\"\">")
                  return false
              } else {
 
@@ -116,9 +127,6 @@
 
 
              }
-
-
-
 
              //      //while there are still letters left and user still has guesses and the user guess is a letter in alphabet)
              //      while ((remainingLetters > 0) && (remainingGuesses > 0) && (alphabet.indexOf(userGuess.toLowerCase) !== -1)) {
