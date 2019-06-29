@@ -1,4 +1,3 @@
-
 /* Seinfeld colors I can Use, you have to pay for font so trying to find one that closely resembles 'Fenice ITC' */
 
 /*  colors
@@ -8,6 +7,9 @@
     red #e62a39;
 */
 
+* {
+    box-sizing: border-box;
+}
 
 body {
     background-color: #eee;
@@ -18,40 +20,15 @@ body {
     background: url('../images/bgimage.jpg') no-repeat;
     background-size: cover;
 }
-.container { 
+
+.container {
     text-align: center;
-    
+
 }
-h1,h2,h3,
-h4,h5,h6 {
+
+h1, h2, h3, h4, h5, h6 {
     padding: 5px;
-    background-color: rgba(12,51,114,.6);
-}
-#title-image, #gameover-image, #youwin-image{ 
-    display: block;
-    margin: 0 auto;
-}
-
-#currentWord {
-    letter-spacing: 10px;
-}
-
-#pressKeyTryAgain, 
-#gameover-image, 
-#youwin-image { display: none;}
-.gameplay-column {
-    padding-top: 20px;
-    border: 3px dashed #fff;
-    text-align: center;
-    margin-top: 20px;
-    min-height: 500px;
-    background-color: rgba(255, 255, 255, .3);
-}
-
-
-
-* {
-    box-sizing: border-box;
+    background-color: rgba(12, 51, 114, .6);
 }
 
 body {
@@ -59,7 +36,8 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-body, .jumbotron {
+body,
+.jumbotron {
     background: #204d9e;
 }
 
@@ -94,121 +72,39 @@ body, .jumbotron {
     font-size: 24px;
 }
 
-.minimal {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.horizontalList {
-    padding-left: 0px;
-}
-
-.horizontalList li {
-    display: inline-block;
-    padding: 5px 5px 2px 5px;
-}
-
-#solution {
-    padding-bottom: 10px;
-}
-
-#solution li {
-    margin-top: 0px;
-    font-size: 2.5vw;
-    border-bottom: 1px solid #fddd5b;
-    margin-right: 5px;
-}
-
-#solution li[data-solved='true'] {
-    border-bottom: none;
-    color: #204d9e;
-}
-
-#solution li[data-failed='true'] {
-    color: #e62a39;
-    border-bottom: none;
-}
-
-#invalidGuesses li {
-    font-size: 1.5vw;
-}
-
-#invalidGuesses li::after {
-    content: ",";
-}
-
-#invalidGuesses li:last-of-type::after {
-    content: "";
-}
-
-.btn-group>.btn {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-li[data-value="-"] span.break {
-    display: none;
-}
-
 /* Small Devices, Tablets */
 
 @media only screen and (max-width: 768px) {
     .jumbotron {
         padding-top: 5px;
     }
+
     .jumbotron img {
         width: auto;
         height: 40px;
         float: left;
     }
+
     .jumbotron h2 {
         font-size: 3vw;
         float: right;
         margin-top: calc(20px - 1.5vw);
     }
+
     .container>.row:nth-of-type(2) {
         clear: both;
         margin-top: 10px;
     }
-    #hangmanImage {
-        height: 400px;
-        width: auto;
-        margin: 0 auto;
-    }
-    #solution li {
-        font-size: 4.5vw;
-    }
-}
 
-#mobile-keyboard-fix {
-    position: absolute;
-    left: -200px;
-    top: 0px;
-}
-
-/* Extra Small Devices, Phones */
+/* Extra Small Devices, Phones copied from 3wc wesite*/
 
 @media only screen and (max-width: 544px) {
-    #hangmanImage {
-        height: 200px;
-    }
-    li[data-value="-"] {
-        display: block;
-        margin: 0px;
-        padding: 0px;
-    }
-    li[data-value="-"] span.space {
-        display: none;
-    }
-    li[data-value="-"] span.break {
-        display: block;
-    }
+    
+
     .panel-body {
         font-size: 4vw;
     }
 }
-
-/* Custom, iPhone Retina */
 
 @media only screen and (max-width: 320px) {
     .btn-group>.btn {
@@ -217,18 +113,28 @@ li[data-value="-"] span.break {
     }
 }
 
-/* sound toggle */
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 24px;
+#title-image,
+#gameover-image,
+#youwin-image {
+    display: block;
+    margin: 0 auto;
 }
 
-.switch input {
+#currentWord {
+    letter-spacing: 10px;
+}
+
+#pressKeyTryAgain,
+#gameover-image,
+#youwin-image {
     display: none;
 }
 
-
-
+.gameplay-column {
+    padding-top: 20px;
+    border: 3px dashed #fff;
+    text-align: center;
+    margin-top: 20px;
+    min-height: 500px;
+    background-color: rgba(255, 255, 255, .3);
+}
